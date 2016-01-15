@@ -1,28 +1,28 @@
 angular.module('MainCtrl', []).controller('MainController', function($scope) {
-	$scope.tagline = 'To the moon and back!';
-	var tabs = ["tab1", "tab2", "tab3"];
-	$scope.tab = [true,false,false];
 
-
-	function changeTabs(tab){
-		if (tab == "tab1"){
-			$scope.tab = [true,false,false];
-		} else if (tab == "tab2") {
-			$scope.tab = [false,true,false];
-		} else {
-			$scope.tab = [false,false,true];
+	function init(){
+		$scope.nav = {
+			tabs: [
+			{path:"",value:"Home"},
+			{path:"components",value:"Components"},
+			{path:"geeks",value:"Geeks"}
+			],
+			active: 0
+		};
+		var pathname = window.location.pathname.slice(1);
+		for(var i = 0; i < $scope.nav.tabs.length; i++){
+			if (pathname == $scope.nav.tabs[i].path){
+				$scope.nav.active = i;
+				return;
+			}
 		}
 	}
 
+	init();
 
-	$(function(){
-	  $('.nav-tab a').click(function (e) {
-	  	var tab = e.target.id;
-	  	console.log(tab);
-	  	changeTabs(tab);
-	  });
-	});
-
+	$scope.changeTab = function(e, index){
+		$scope.nav.active = index;
+	};
 
 
 });

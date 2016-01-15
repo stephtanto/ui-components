@@ -1,5 +1,54 @@
-<div class="jumbotron text-center">
-	<h1>Nerds and Proud</h1>
+<div>
+	<h1>Components</h1>
+</div>
+ 
+<div class="section-3">
+	<h2>1.0 Tabs</h2>
+	<div>
+		<ul class="nav">
+			<li ng-repeat="tab in example.tabs" class="nav-tab" ng-class="{active:example.active == $index}"><a class="nav-tab-block" href="/{{tab.path}}" ng-click="changeTab($event, $index )">{{tab.value}}</a></li>
+		</ul>
+		<div class="nav-content">
+			<div ng-repeat="tab in example.tabs" ng-if="example.active == $index">
+				<label>Tab {{$index + 1}} Content</label>
+				<p>{{example.content}}</p>
+			</div>
+		</div>
+	</div>
+</div>
 
-	<p>{{ tagline }}</p>
+<div class="section-6">
+	<h2>2.0 Tables</h2>
+	<div>
+		<table class="table-simple">
+			<thead>
+				<tr>
+					<th>Heading 1</th>
+					<th>Heading 2</th>
+					<th>Heading 3</th>
+					<th>Heading 4</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Row 1:Content</td>
+					<td>Row 1:Content</td>
+					<td>Row 1:Content</td>
+					<td>Row 1:Content</td>
+				</tr>
+				<tr>
+					<td>Row 2:Content</td>
+					<td>Row 2:Content</td>
+					<td>Row 2:Content</td>
+					<td>Row 2:Content</td>
+				</tr>
+				<tr>
+					<td>Row 3:Content</td>
+					<td>Row 3:Content</td>
+					<td>Row 3:Content</td>
+					<td>Row 3:Content</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

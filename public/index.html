@@ -30,9 +30,7 @@
 	<!-- HEADER -->
 	<div>
 		<ul class="nav">
-			<li class="nav-tab" ng-class="{active:tab[0]}"><a id="tab1" class="nav-tab-block" href="/">Home</a></li>
-			<li class="nav-tab" ng-class="{active:tab[1]}"><a id="tab2" class="nav-tab-block" href="/component">Components</a></li>
-			<li class="nav-tab" ng-class="{active:tab[2]}"><a id="tab3" class="nav-tab-block" href="/geeks">Geeks</a></li>
+			<li ng-repeat="tab in nav.tabs" class="nav-tab" ng-class="{active:nav.active == $index}"><a class="nav-tab-block" href="/{{tab.path}}" ng-click="changeTab($event, $index )">{{tab.value}}</a></li>
 		</ul>
 	</div>
 

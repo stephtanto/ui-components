@@ -8,7 +8,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'MainController'
 		})
 
-		.when('/component', {
+		.when('/components', {
 			templateUrl: 'views/component.html',
 			controller: 'ComponentController'
 		})
